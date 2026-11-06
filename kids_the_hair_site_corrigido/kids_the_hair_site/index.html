@@ -1,0 +1,1703 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Kids The Hair | Salão de Beleza Infantil e Adulto</title>
+
+  <meta
+    name="description"
+    content="Kids The Hair — salão de beleza infantil e adulto em Goiânia. Cortes para toda a família em um ambiente alegre, seguro e divertido."
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --amarelo: #ffd21c;
+      --amarelo-escuro: #f4ae00;
+      --vermelho: #e73735;
+      --vermelho-escuro: #b91f32;
+      --azul: #20c7dc;
+      --azul-escuro: #087ca4;
+      --rosa: #ef4e94;
+      --roxo: #7239a6;
+      --verde: #26bd66;
+      --escuro: #1e2533;
+      --cinza: #596170;
+      --claro: #fffdf7;
+      --linha: #e9e3d3;
+      --sombra: 0 18px 45px rgba(35, 42, 59, .14);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      overflow-x: hidden;
+      color: var(--escuro);
+      background: var(--claro);
+      font-family: "Nunito", Arial, sans-serif;
+    }
+
+    body.menu-open {
+      overflow: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    button,
+    input,
+    textarea {
+      font: inherit;
+    }
+
+    .container {
+      width: min(1160px, calc(100% - 34px));
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 105px 0;
+    }
+
+    .section-title {
+      max-width: 700px;
+      margin: 0 auto 50px;
+      text-align: center;
+    }
+
+    .section-title span {
+      display: inline-block;
+      margin-bottom: 10px;
+      color: var(--vermelho);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .section-title h2 {
+      color: var(--escuro);
+      font-family: "Baloo 2", cursive;
+      font-size: clamp(38px, 6vw, 64px);
+      font-weight: 800;
+      line-height: .98;
+    }
+
+    .section-title p {
+      margin-top: 17px;
+      color: var(--cinza);
+      line-height: 1.7;
+    }
+
+    .button {
+      min-height: 52px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 0 24px;
+      border: 0;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 900;
+      text-transform: uppercase;
+      transition: .3s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-4px) rotate(-1deg);
+    }
+
+    .button-red {
+      color: white;
+      background: var(--vermelho);
+      box-shadow: 0 10px 22px rgba(231, 55, 53, .28);
+    }
+
+    .button-yellow {
+      color: var(--escuro);
+      background: var(--amarelo);
+      box-shadow: 0 10px 22px rgba(244, 174, 0, .26);
+    }
+
+    .button-white {
+      color: var(--vermelho);
+      background: white;
+    }
+
+    .button-outline {
+      color: white;
+      border: 2px solid white;
+      background: transparent;
+    }
+
+    .button-outline:hover {
+      color: var(--escuro);
+      background: white;
+    }
+
+    /* TOPO */
+
+    .topbar {
+      min-height: 35px;
+      display: flex;
+      align-items: center;
+      color: white;
+      background: var(--vermelho);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .topbar .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    /* HEADER */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255, 253, 247, .95);
+      border-bottom: 1px solid rgba(0, 0, 0, .07);
+      backdrop-filter: blur(12px);
+    }
+
+    .nav {
+      min-height: 83px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .logo {
+      width: 68px;
+      flex-shrink: 0;
+    }
+
+    .logo img {
+      height: 68px;
+      object-fit: contain;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      color: var(--escuro);
+      font-size: 14px;
+      font-weight: 900;
+    }
+
+    .nav-links a:not(.button):hover {
+      color: var(--vermelho);
+    }
+
+    .menu-button {
+      display: none;
+      border: 0;
+      color: var(--vermelho);
+      background: transparent;
+      cursor: pointer;
+      font-size: 30px;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 700px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background-color: #0d9fbd;
+      background-image:
+        linear-gradient(90deg, rgba(14, 139, 173, .98) 0%, rgba(13, 159, 189, .94) 42%, rgba(13, 159, 189, .30) 100%),
+        url("assets/cliente-1.jpg");
+      background-position: left center, right center;
+      background-size: 100% 100%, auto 100%;
+      background-repeat: no-repeat;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: -190px;
+      left: -110px;
+      width: 430px;
+      height: 430px;
+      border-radius: 50%;
+      background: var(--amarelo);
+      opacity: .95;
+    }
+
+    .hero::after {
+      content: "✦  ✂  ★  ✦  ✂";
+      position: absolute;
+      right: 4%;
+      bottom: 5%;
+      color: rgba(255, 255, 255, .38);
+      font-family: "Baloo 2", cursive;
+      font-size: 35px;
+      transform: rotate(-12deg);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 650px;
+      padding: 95px 0;
+      color: white;
+      animation: entrada .8s ease both;
+    }
+
+    .hero-logo {
+      width: 145px;
+      height: 145px;
+      margin-bottom: 18px;
+      object-fit: contain;
+      background: transparent;
+      border-radius: 50%;
+      filter: drop-shadow(0 8px 8px rgba(0,0,0,.18));
+      animation: flutuar 4s ease-in-out infinite;
+    }
+
+    .hero h1 {
+      max-width: 700px;
+      font-family: "Baloo 2", cursive;
+      font-size: clamp(49px, 7vw, 86px);
+      font-weight: 800;
+      line-height: .9;
+      letter-spacing: -.04em;
+    }
+
+    .hero h1 strong {
+      color: var(--amarelo);
+    }
+
+    .hero p {
+      max-width: 550px;
+      margin: 25px 0 30px;
+      color: #f4ffff;
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .hero-note {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 27px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    /* SELO */
+
+    .badges {
+      position: relative;
+      z-index: 2;
+      margin-top: -47px;
+    }
+
+    .badges-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      overflow: hidden;
+      border-radius: 22px;
+      background: white;
+      box-shadow: var(--sombra);
+    }
+
+    .badge {
+      min-height: 115px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 24px;
+      border-right: 1px solid var(--linha);
+    }
+
+    .badge:last-child {
+      border-right: 0;
+    }
+
+    .badge-icon {
+      width: 45px;
+      height: 45px;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      border-radius: 50%;
+      color: white;
+      background: var(--vermelho);
+      font-size: 21px;
+    }
+
+    .badge:nth-child(2) .badge-icon {
+      background: var(--azul);
+    }
+
+    .badge:nth-child(3) .badge-icon {
+      background: var(--amarelo);
+      color: var(--escuro);
+    }
+
+    .badge strong {
+      display: block;
+      font-size: 16px;
+      font-weight: 900;
+    }
+
+    .badge small {
+      display: block;
+      margin-top: 3px;
+      color: var(--cinza);
+      font-size: 12px;
+    }
+
+    /* SOBRE */
+
+    .about {
+      background: #fffaf0;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: .95fr 1.05fr;
+      align-items: center;
+      gap: 75px;
+    }
+
+    .about-image {
+      position: relative;
+      min-height: 520px;
+    }
+
+    .about-image::before {
+      content: "";
+      position: absolute;
+      z-index: 0;
+      top: -18px;
+      left: -18px;
+      width: 145px;
+      height: 145px;
+      border-radius: 28px;
+      background: var(--amarelo);
+    }
+
+    .about-image::after {
+      content: "";
+      position: absolute;
+      z-index: 0;
+      right: -20px;
+      bottom: -20px;
+      width: 170px;
+      height: 170px;
+      border-radius: 50%;
+      background: var(--azul);
+    }
+
+    .about-image img {
+      position: relative;
+      z-index: 1;
+      height: 520px;
+      object-fit: cover;
+      border: 9px solid white;
+      border-radius: 28px;
+      box-shadow: var(--sombra);
+    }
+
+    .about-content h2 {
+      color: var(--escuro);
+      font-family: "Baloo 2", cursive;
+      font-size: clamp(39px, 5vw, 63px);
+      font-weight: 800;
+      line-height: .95;
+    }
+
+    .about-content h2 span {
+      color: var(--vermelho);
+    }
+
+    .about-content p {
+      margin: 22px 0;
+      color: var(--cinza);
+      line-height: 1.8;
+    }
+
+    .about-list {
+      display: grid;
+      gap: 13px;
+      margin: 27px 0 30px;
+    }
+
+    .about-list li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      list-style: none;
+      font-weight: 800;
+    }
+
+    .about-list li::before {
+      content: "✓";
+      width: 24px;
+      height: 24px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: white;
+      background: var(--verde);
+      font-size: 12px;
+    }
+
+    /* SERVIÇOS */
+
+    .services {
+      background:
+        radial-gradient(circle at 5% 10%, rgba(255,210,28,.18) 0 80px, transparent 81px),
+        radial-gradient(circle at 95% 90%, rgba(32,199,220,.18) 0 120px, transparent 121px),
+        white;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 17px;
+    }
+
+    .service-card {
+      position: relative;
+      overflow: hidden;
+      padding: 27px 22px;
+      border-radius: 22px;
+      color: white;
+      box-shadow: 0 12px 25px rgba(0,0,0,.1);
+      transition: .35s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-9px) rotate(1deg);
+    }
+
+    .service-card:nth-child(1) {
+      background: var(--vermelho);
+    }
+
+    .service-card:nth-child(2) {
+      background: var(--rosa);
+    }
+
+    .service-card:nth-child(3) {
+      background: var(--azul-escuro);
+    }
+
+    .service-card:nth-child(4) {
+      background: var(--roxo);
+    }
+
+    .service-card::after {
+      content: "✂";
+      position: absolute;
+      right: 14px;
+      top: 10px;
+      color: rgba(255,255,255,.23);
+      font-size: 65px;
+      transform: rotate(18deg);
+    }
+
+    .service-number {
+      position: relative;
+      z-index: 1;
+      display: block;
+      margin-bottom: 35px;
+      font-family: "Baloo 2", cursive;
+      font-size: 23px;
+      font-weight: 800;
+    }
+
+    .service-card h3 {
+      position: relative;
+      z-index: 1;
+      margin-bottom: 10px;
+      font-family: "Baloo 2", cursive;
+      font-size: 25px;
+      line-height: 1;
+    }
+
+    .service-card p {
+      position: relative;
+      z-index: 1;
+      color: rgba(255,255,255,.9);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    /* PREÇOS */
+
+    .prices {
+      background: var(--azul);
+    }
+
+    .prices .section-title h2,
+    .prices .section-title p {
+      color: white;
+    }
+
+    .prices .section-title span {
+      color: var(--amarelo);
+    }
+
+    .prices-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 19px;
+    }
+
+    .price-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 23px 25px;
+      border-radius: 18px;
+      background: white;
+      box-shadow: 0 9px 20px rgba(0,0,0,.1);
+    }
+
+    .price-card h3 {
+      color: var(--escuro);
+      font-family: "Baloo 2", cursive;
+      font-size: 23px;
+      line-height: 1;
+    }
+
+    .price-card p {
+      margin-top: 7px;
+      color: var(--cinza);
+      font-size: 12px;
+    }
+
+    .price {
+      color: var(--vermelho);
+      font-family: "Baloo 2", cursive;
+      font-size: 34px;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .price-notes {
+      margin-top: 25px;
+      color: white;
+      text-align: center;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    /* EXPERIÊNCIA */
+
+    .experience-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 65px;
+    }
+
+    .experience-content h2 {
+      color: var(--escuro);
+      font-family: "Baloo 2", cursive;
+      font-size: clamp(40px, 5vw, 65px);
+      font-weight: 800;
+      line-height: .95;
+    }
+
+    .experience-content h2 span {
+      color: var(--rosa);
+    }
+
+    .experience-content p {
+      margin: 20px 0;
+      color: var(--cinza);
+      line-height: 1.8;
+    }
+
+    .experience-items {
+      display: grid;
+      gap: 15px;
+      margin: 28px 0;
+    }
+
+    .experience-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 17px;
+      border-radius: 15px;
+      background: #fff7d3;
+    }
+
+    .experience-item:nth-child(2) {
+      background: #def9fc;
+    }
+
+    .experience-item:nth-child(3) {
+      background: #ffe0ed;
+    }
+
+    .experience-item b {
+      font-size: 14px;
+    }
+
+    .experience-item span {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: white;
+      background: var(--vermelho);
+    }
+
+    .experience-photo {
+      position: relative;
+    }
+
+    .experience-photo img {
+      height: 590px;
+      object-fit: cover;
+      border-radius: 30px;
+      box-shadow: var(--sombra);
+    }
+
+    .experience-photo::before {
+      content: "Aqui seu filho é sempre bem cuidado! ♥";
+      position: absolute;
+      z-index: 2;
+      right: -25px;
+      bottom: 28px;
+      max-width: 170px;
+      padding: 16px;
+      border-radius: 16px;
+      color: var(--escuro);
+      background: var(--amarelo);
+      font-family: "Baloo 2", cursive;
+      font-size: 19px;
+      font-weight: 800;
+      line-height: 1;
+      transform: rotate(4deg);
+    }
+
+    /* GALERIA */
+
+    .gallery {
+      background: #fff8e9;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr .9fr;
+      grid-template-rows: 240px 240px;
+      gap: 15px;
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 21px;
+      background: #eee;
+    }
+
+    .gallery-item:first-child {
+      grid-row: 1 / 3;
+    }
+
+    .gallery-item img {
+      height: 100%;
+      object-fit: cover;
+      transition: .5s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.08);
+    }
+
+    .gallery-label {
+      position: absolute;
+      right: 15px;
+      bottom: 14px;
+      left: 15px;
+      color: white;
+      font-family: "Baloo 2", cursive;
+      font-size: 23px;
+      font-weight: 800;
+      text-shadow: 0 2px 7px rgba(0,0,0,.5);
+    }
+
+    /* LOCALIZAÇÃO */
+
+    .location {
+      background: white;
+    }
+
+    .location-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 28px;
+    }
+
+    .location-info {
+      padding: 37px;
+      border-radius: 25px;
+      color: white;
+      background:
+        linear-gradient(145deg, rgba(231,55,53,.97), rgba(185,31,50,.92)),
+        url("assets/fachada.jpg") center / cover;
+    }
+
+    .location-info h2 {
+      color: white;
+      font-family: "Baloo 2", cursive;
+      font-size: 54px;
+      font-weight: 800;
+      line-height: .9;
+    }
+
+    .location-info p {
+      margin: 20px 0 30px;
+      color: #ffe7e5;
+      line-height: 1.7;
+    }
+
+    .location-list {
+      display: grid;
+      gap: 21px;
+    }
+
+    .location-list li {
+      display: flex;
+      gap: 12px;
+      list-style: none;
+      color: #fff2f0;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .location-list strong {
+      display: block;
+      color: white;
+    }
+
+    .map {
+      min-height: 410px;
+      overflow: hidden;
+      border-radius: 25px;
+      box-shadow: var(--sombra);
+    }
+
+    .map iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 410px;
+      border: 0;
+    }
+
+    /* CTA */
+
+    .cta {
+      position: relative;
+      overflow: hidden;
+      color: white;
+      background: var(--vermelho);
+    }
+
+    .cta::before {
+      content: "✂";
+      position: absolute;
+      right: 7%;
+      top: -25px;
+      color: rgba(255,255,255,.13);
+      font-size: 210px;
+      transform: rotate(25deg);
+    }
+
+    .cta-content {
+      position: relative;
+      z-index: 1;
+      max-width: 750px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .cta h2 {
+      color: white;
+      font-family: "Baloo 2", cursive;
+      font-size: clamp(43px, 6vw, 70px);
+      font-weight: 800;
+      line-height: .95;
+    }
+
+    .cta p {
+      max-width: 600px;
+      margin: 20px auto 27px;
+      color: #ffe4e3;
+      line-height: 1.7;
+    }
+
+    /* RODAPÉ */
+
+    footer {
+      padding: 38px 0 20px;
+      color: #cad2dc;
+      background: var(--escuro);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr .9fr;
+      gap: 35px;
+    }
+
+    .footer-logo {
+      width: 100px;
+      margin-bottom: 15px;
+    }
+
+    footer h3 {
+      margin-bottom: 12px;
+      color: white;
+      font-family: "Baloo 2", cursive;
+      font-size: 24px;
+    }
+
+    footer p {
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .copyright {
+      margin-top: 32px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255,255,255,.12);
+      text-align: center;
+      font-size: 12px;
+    }
+
+    .whatsapp {
+      width: 60px;
+      height: 60px;
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 30;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: white;
+      background: var(--verde);
+      box-shadow: 0 10px 25px rgba(38,189,102,.4);
+      font-size: 27px;
+      transition: .3s ease;
+      animation: pulsar 2.3s infinite;
+    }
+
+    .whatsapp:hover {
+      transform: scale(1.12);
+    }
+
+    /* ANIMAÇÕES */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(35px);
+      transition: .8s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes entrada {
+      from {
+        opacity: 0;
+        transform: translateX(-40px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes flutuar {
+      0%, 100% {
+        transform: translateY(0) rotate(-2deg);
+      }
+
+      50% {
+        transform: translateY(-9px) rotate(2deg);
+      }
+    }
+
+    @keyframes pulsar {
+      0%, 100% {
+        box-shadow: 0 10px 25px rgba(38,189,102,.4);
+      }
+
+      50% {
+        box-shadow: 0 10px 25px rgba(38,189,102,.4), 0 0 0 12px rgba(38,189,102,.12);
+      }
+    }
+
+    /* RESPONSIVO */
+
+    @media (max-width: 900px) {
+      .menu-button {
+        display: block;
+      }
+
+      .nav-links {
+        position: fixed;
+        top: 118px;
+        left: 15px;
+        right: 15px;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 16px;
+        border-radius: 18px;
+        background: white;
+        box-shadow: var(--sombra);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links a:not(.button) {
+        padding: 14px 5px;
+        border-bottom: 1px solid var(--linha);
+      }
+
+      .nav-links .button {
+        margin-top: 13px;
+      }
+
+      .about-grid,
+      .experience-grid,
+      .location-grid {
+        grid-template-columns: 1fr;
+        gap: 55px;
+      }
+
+      .service-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .prices-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 570px) {
+      .container {
+        width: calc(100% - 28px);
+      }
+
+      .topbar .container {
+        justify-content: center;
+        text-align: center;
+      }
+
+      .topbar span {
+        display: none;
+      }
+
+      .nav {
+        min-height: 77px;
+      }
+
+      .nav-links {
+        top: 112px;
+      }
+
+      .hero {
+        min-height: 710px;
+        background-image:
+          linear-gradient(90deg, rgba(14, 139, 173, .94), rgba(13, 159, 189, .78)),
+          url("assets/cliente-1.jpg");
+        background-position: center, center 35%;
+        background-size: cover, cover;
+      }
+
+      .hero-content {
+        padding: 73px 0;
+      }
+
+      .hero h1 {
+        font-size: 55px;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      .section {
+        padding: 78px 0;
+      }
+
+      .badges {
+        margin-top: -27px;
+      }
+
+      .badges-grid,
+      .service-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .badge {
+        border-right: 0;
+        border-bottom: 1px solid var(--linha);
+      }
+
+      .badge:last-child {
+        border-bottom: 0;
+      }
+
+      .about-image {
+        min-height: 360px;
+      }
+
+      .about-image img {
+        height: 360px;
+      }
+
+      .experience-photo img {
+        height: 440px;
+      }
+
+      .experience-photo::before {
+        right: 8px;
+      }
+
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 280px);
+      }
+
+      .gallery-item:first-child {
+        grid-column: auto;
+        grid-row: auto;
+      }
+
+      .gallery-item:nth-child(n+4) {
+        display: none;
+      }
+
+      .price-card {
+        padding: 19px;
+      }
+
+      .price-card h3 {
+        font-size: 20px;
+      }
+
+      .price {
+        font-size: 28px;
+      }
+
+      .location-info {
+        padding: 28px;
+      }
+
+      .location-info h2 {
+        font-size: 45px;
+      }
+
+      .map,
+      .map iframe {
+        min-height: 320px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="topbar">
+    <div class="container">
+      <strong>✂ Corte de cabelo para toda a família!</strong>
+      <span>Infantil · Juvenil · Adulto</span>
+    </div>
+  </div>
+
+  <header>
+    <nav class="container nav">
+
+      <a href="#inicio" class="logo">
+        <img src="assets/logo.png" alt="Kids The Hair">
+      </a>
+
+      <button
+        class="menu-button"
+        onclick="abrirMenu()"
+        aria-label="Abrir menu">
+        ☰
+      </button>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#sobre" onclick="fecharMenu()">Sobre o salão</a>
+        <a href="#servicos" onclick="fecharMenu()">Serviços</a>
+        <a href="#precos" onclick="fecharMenu()">Preços</a>
+        <a href="#galeria" onclick="fecharMenu()">Galeria</a>
+        <a href="#localizacao" onclick="fecharMenu()">Localização</a>
+
+        <a
+          class="button button-red"
+          href="https://wa.me/556291082189?text=Olá!%20Gostaria%20de%20agendar%20um%20corte%20na%20Kids%20The%20Hair."
+          target="_blank">
+          Agendar agora
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="hero" id="inicio">
+      <div class="container hero-content">
+
+        <img
+          class="hero-logo"
+          src="assets/logo.png"
+          alt="Logo Kids The Hair">
+
+        <h1>
+          Corte de cabelo <strong>divertido</strong> para toda a família!
+        </h1>
+
+        <p>
+          Um salão colorido, acolhedor e preparado para deixar crianças,
+          jovens e adultos ainda mais estilosos.
+        </p>
+
+        <div class="hero-actions">
+          <a
+            class="button button-yellow"
+            href="https://wa.me/556291082189?text=Olá!%20Gostaria%20de%20agendar%20um%20corte%20na%20Kids%20The%20Hair."
+            target="_blank">
+            Agendar pelo WhatsApp ↗
+          </a>
+
+          <a class="button button-outline" href="#precos">
+            Ver tabela de preços
+          </a>
+        </div>
+
+        <div class="hero-note">
+          <span>★★★★★</span>
+          <span>Atendimento infantil e adulto em Goiânia</span>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="badges">
+      <div class="container badges-grid">
+
+        <div class="badge">
+          <div class="badge-icon">✂</div>
+          <div>
+            <strong>Cortes para toda a família</strong>
+            <small>Infantil, juvenil e adulto</small>
+          </div>
+        </div>
+
+        <div class="badge">
+          <div class="badge-icon">♥</div>
+          <div>
+            <strong>Ambiente divertido</strong>
+            <small>Colorido, alegre e acolhedor</small>
+          </div>
+        </div>
+
+        <div class="badge">
+          <div class="badge-icon">★</div>
+          <div>
+            <strong>Lavagem incluída</strong>
+            <small>Em todos os cortes</small>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section about" id="sobre">
+      <div class="container about-grid">
+
+        <div class="about-image reveal">
+          <img
+            src="assets/fachada.jpg"
+            alt="Fachada da Kids The Hair">
+        </div>
+
+        <div class="about-content reveal">
+          <div class="section-title" style="text-align:left;margin:0 0 25px">
+            <span>Sobre o salão</span>
+            <h2>Um lugar onde cortar o cabelo vira uma <span>experiência.</span></h2>
+          </div>
+
+          <p>
+            A Kids The Hair é um salão de beleza infantil e adulto localizado
+            no Setor Marista, em Goiânia.
+          </p>
+
+          <p>
+            Nosso espaço foi pensado para tornar o momento do corte mais leve,
+            divertido e confortável para toda a família.
+          </p>
+
+          <ul class="about-list">
+            <li>Atendimento para crianças, jovens e adultos</li>
+            <li>Ambiente colorido e preparado para os pequenos</li>
+            <li>Equipe atenciosa e acolhedora</li>
+            <li>Lavagem incluída em todos os cortes</li>
+          </ul>
+
+          <a
+            class="button button-red"
+            href="https://wa.me/556291082189?text=Olá!%20Quero%20conhecer%20a%20Kids%20The%20Hair."
+            target="_blank">
+            Falar com a equipe
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section services" id="servicos">
+      <div class="container">
+
+        <div class="section-title reveal">
+          <span>O que fazemos</span>
+          <h2>Serviços para cada fase da vida</h2>
+          <p>
+            Do primeiro corte ao visual adulto, aqui todo mundo encontra
+            cuidado, estilo e um atendimento especial.
+          </p>
+        </div>
+
+        <div class="service-grid">
+
+          <article class="service-card reveal">
+            <span class="service-number">01</span>
+            <h3>Corte infantil</h3>
+            <p>
+              Cortes masculinos e femininos para crianças de 0 a 14 anos.
+            </p>
+          </article>
+
+          <article class="service-card reveal">
+            <span class="service-number">02</span>
+            <h3>Corte juvenil feminino</h3>
+            <p>
+              Estilo e personalidade para meninas de 15 a 17 anos.
+            </p>
+          </article>
+
+          <article class="service-card reveal">
+            <span class="service-number">03</span>
+            <h3>Corte masculino adulto</h3>
+            <p>
+              Cortes modernos e tradicionais para homens a partir de 15 anos.
+            </p>
+          </article>
+
+          <article class="service-card reveal">
+            <span class="service-number">04</span>
+            <h3>Corte adulto feminino</h3>
+            <p>
+              Um momento de cuidado e beleza para mulheres a partir de 18 anos.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section prices" id="precos">
+      <div class="container">
+
+        <div class="section-title reveal">
+          <span>Tabela de valores</span>
+          <h2>Escolha seu corte</h2>
+          <p>
+            Valores transparentes e atendimento especial para toda a família.
+          </p>
+        </div>
+
+        <div class="prices-grid">
+
+          <article class="price-card reveal">
+            <div>
+              <h3>Corte infantil</h3>
+              <p>Masculino e feminino · 0 a 14 anos</p>
+              <p>Terça e quarta-feira</p>
+            </div>
+            <strong class="price">R$ 60</strong>
+          </article>
+
+          <article class="price-card reveal">
+            <div>
+              <h3>Corte infantil</h3>
+              <p>Masculino e feminino · 0 a 14 anos</p>
+              <p>Quinta-feira a sábado</p>
+            </div>
+            <strong class="price">R$ 70</strong>
+          </article>
+
+          <article class="price-card reveal">
+            <div>
+              <h3>Corte juvenil feminino</h3>
+              <p>De 15 a 17 anos</p>
+            </div>
+            <strong class="price">R$ 90</strong>
+          </article>
+
+          <article class="price-card reveal">
+            <div>
+              <h3>Corte masculino adulto</h3>
+              <p>A partir de 15 anos</p>
+            </div>
+            <strong class="price">R$ 70</strong>
+          </article>
+
+          <article class="price-card reveal">
+            <div>
+              <h3>Corte adulto feminino</h3>
+              <p>A partir de 18 anos</p>
+            </div>
+            <strong class="price">R$ 120</strong>
+          </article>
+
+          <article class="price-card reveal">
+            <div>
+              <h3>Lavagem</h3>
+              <p>Incluída em todos os cortes</p>
+            </div>
+            <strong class="price">Inclusa</strong>
+          </article>
+
+        </div>
+
+        <div class="price-notes">
+          Pagamentos no cartão possuem acréscimo de R$ 2,00.<br>
+          Os valores podem ser confirmados pelo WhatsApp antes do atendimento.
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container experience-grid">
+
+        <div class="experience-content reveal">
+          <div class="section-title" style="text-align:left;margin:0 0 25px">
+            <span>Experiência Kids</span>
+            <h2>Enquanto eles cuidam do visual, a diversão fica por conta da <span>casa.</span></h2>
+          </div>
+
+          <p>
+            Aqui, o corte deixa de ser motivo de preocupação e se transforma
+            em um momento alegre para a criança e tranquilo para os pais.
+          </p>
+
+          <div class="experience-items">
+            <div class="experience-item">
+              <span>♥</span>
+              <b>Ambiente colorido e descontraído</b>
+            </div>
+
+            <div class="experience-item">
+              <span>★</span>
+              <b>Atendimento acolhedor para os pequenos</b>
+            </div>
+
+            <div class="experience-item">
+              <span>✂</span>
+              <b>Profissionais acostumadas com o público infantil</b>
+            </div>
+          </div>
+
+          <a
+            class="button button-red"
+            href="https://wa.me/556291082189?text=Olá!%20Quero%20agendar%20um%20corte%20infantil."
+            target="_blank">
+            Agendar corte infantil
+          </a>
+        </div>
+
+        <div class="experience-photo reveal">
+          <img
+            src="assets/cliente-2.jpg"
+            alt="Cliente infantil na Kids The Hair">
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section gallery" id="galeria">
+      <div class="container">
+
+        <div class="section-title reveal">
+          <span>Galeria</span>
+          <h2>Quem passa por aqui sai feliz</h2>
+          <p>
+            Um pouquinho do ambiente e da alegria dos nossos clientes.
+          </p>
+        </div>
+
+        <div class="gallery-grid">
+
+          <div class="gallery-item reveal">
+            <img src="assets/cliente-1.jpg" alt="Cliente da Kids The Hair">
+            <div class="gallery-label">Diversão garantida</div>
+          </div>
+
+          <div class="gallery-item reveal">
+            <img src="assets/fachada.jpg" alt="Entrada da Kids The Hair">
+            <div class="gallery-label">Nossa fachada</div>
+          </div>
+
+          <div class="gallery-item reveal">
+            <img src="assets/cliente-2.jpg" alt="Criança após o corte">
+            <div class="gallery-label">Corte aprovado</div>
+          </div>
+
+          <div class="gallery-item reveal">
+            <img src="assets/tabela-precos.jpg" alt="Tabela de preços da Kids The Hair">
+            <div class="gallery-label">Nossos valores</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section location" id="localizacao">
+      <div class="container location-grid">
+
+        <div class="location-info reveal">
+          <h2>Venha conhecer a Kids The Hair!</h2>
+
+          <p>
+            Estamos no Setor Marista, em Goiânia, prontos para receber sua
+            família com muito carinho.
+          </p>
+
+          <ul class="location-list">
+            <li>
+              <span>⌖</span>
+              <div>
+                <strong>Endereço</strong>
+                Rua 26, nº 323<br>
+                Setor Marista<br>
+                Goiânia — GO<br>
+                CEP 74150-080
+              </div>
+            </li>
+
+            <li>
+              <span>☎</span>
+              <div>
+                <strong>Telefone e WhatsApp</strong>
+                (62) 9108-2189
+              </div>
+            </li>
+
+            <li>
+              <span>◷</span>
+              <div>
+                <strong>Atendimento</strong>
+                Consulte a disponibilidade pelo WhatsApp.
+              </div>
+            </li>
+          </ul>
+
+          <br>
+
+          <a
+            class="button button-yellow"
+            href="https://www.google.com/maps/place/Kids+The+Hair+Sal%C3%A3o+de+Beleza+Infantil/"
+            target="_blank">
+            Como chegar ↗
+          </a>
+        </div>
+
+        <div class="map reveal">
+          <iframe
+            loading="lazy"
+            title="Localização Kids The Hair"
+            src="https://www.google.com/maps?q=Rua%2026,%20323,%20Setor%20Marista,%20Goi%C3%A2nia%20-%20GO&output=embed">
+          </iframe>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section cta">
+      <div class="container cta-content">
+
+        <h2>Pronto para renovar o visual?</h2>
+
+        <p>
+          Mande uma mensagem e agende o próximo corte da sua família.
+        </p>
+
+        <a
+          class="button button-yellow"
+          href="https://wa.me/556291082189?text=Olá!%20Gostaria%20de%20agendar%20um%20horário%20na%20Kids%20The%20Hair."
+          target="_blank">
+          Agendar pelo WhatsApp ↗
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div>
+          <img
+            class="footer-logo"
+            src="assets/logo.png"
+            alt="Kids The Hair">
+
+          <p>
+            Salão de beleza infantil e adulto em Goiânia.
+            Corte, cuidado e diversão para toda a família.
+          </p>
+        </div>
+
+        <div>
+          <h3>Contato</h3>
+          <p>
+            WhatsApp: (62) 9108-2189<br>
+            Rua 26, nº 323<br>
+            Setor Marista — Goiânia/GO
+          </p>
+        </div>
+
+        <div>
+          <h3>Atendimento</h3>
+          <p>
+            Infantil, juvenil e adulto<br>
+            Lavagem incluída nos cortes<br>
+            Consulte horários pelo WhatsApp
+          </p>
+        </div>
+
+      </div>
+
+      <div class="copyright">
+        © 2026 Kids The Hair — Salão de Beleza Infantil e Adulto.
+      </div>
+
+    </div>
+  </footer>
+
+  <a
+    class="whatsapp"
+    href="https://wa.me/556291082189?text=Olá!%20Gostaria%20de%20agendar%20um%20corte%20na%20Kids%20The%20Hair."
+    target="_blank"
+    aria-label="Falar com a Kids The Hair pelo WhatsApp">
+    ☎
+  </a>
+
+  <script>
+    function abrirMenu() {
+      document.getElementById("navLinks").classList.toggle("active");
+      document.body.classList.toggle("menu-open");
+    }
+
+    function fecharMenu() {
+      document.getElementById("navLinks").classList.remove("active");
+      document.body.classList.remove("menu-open");
+    }
+
+    document.addEventListener("click", function(event) {
+      const menu = document.getElementById("navLinks");
+      const button = document.querySelector(".menu-button");
+
+      if (
+        menu.classList.contains("active") &&
+        !menu.contains(event.target) &&
+        !button.contains(event.target)
+      ) {
+        fecharMenu();
+      }
+    });
+
+    const observer = new IntersectionObserver(
+      function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      {
+        threshold: .12
+      }
+    );
+
+    document.querySelectorAll(".reveal").forEach(function(element) {
+      observer.observe(element);
+    });
+  </script>
+
+</body>
+</html>
